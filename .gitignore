@@ -1,0 +1,20 @@
+# Pasta de plugins baixados pelo terraform init
+.terraform/
+
+# Estado: contém IDs e pode conter segredos. NUNCA vai para o Git.
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Overrides locais
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Arquivos de variáveis com segredos (o terraform.tfvars deste repo não tem segredos)
+*.auto.tfvars
+secrets.tfvars
+.env

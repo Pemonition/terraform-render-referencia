@@ -1,0 +1,15 @@
+# COMO TRAZER UM SERVIÇO QUE JÁ EXISTE PARA O TERRAFORM (sem recriar)
+#
+# 1. Copie este arquivo para a raiz com extensão .tf (ex.: import.tf).
+# 2. Troque o ID pelo do serviço (aparece na URL do painel: .../web/srv-xxxx).
+# 3. Adicione o serviço em var.servicos com o MESMO nome e configuração que ele tem hoje.
+# 4. Rode `terraform plan`: deve mostrar "1 to import" e, idealmente, 0 mudanças.
+# 5. Rode `terraform apply` e depois apague este arquivo (o import só precisa rodar uma vez).
+#
+# Atenção: serviço criado por Blueprint (render.yaml) continua sincronizado pelo Blueprint.
+# Escolha UM dono para cada recurso; dois gerenciando o mesmo serviço brigam entre si.
+
+import {
+  to = module.servico["scraperapi-melhorado"].render_web_service.this
+  id = "srv-COLOQUE-O-ID-AQUI"
+}
