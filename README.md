@@ -77,7 +77,7 @@ Comandos úteis:
 | `terraform fmt -recursive` | Formata os arquivos no padrão oficial |
 | `terraform validate` | Confere sintaxe e tipos (sem chamar a nuvem) |
 | `terraform state list` | Lista o que está no estado |
-| `terraform plan -out=plano.tfplan` + `terraform apply plano.tfplan` | Aplica exatamente o plano revisado |
+| `terraform plan '-out=plano.tfplan'` + `terraform apply plano.tfplan` | Aplica exatamente o plano revisado. No PowerShell 5.1 as aspas são obrigatórias: sem elas o argumento é partido no `.` e o Terraform responde "Too many command line arguments" |
 | `terraform init -upgrade` | Atualiza o provider dentro da faixa de `versions.tf` |
 
 ---
